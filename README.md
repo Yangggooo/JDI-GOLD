@@ -1,6 +1,6 @@
-# DOIT GOLD Website
+# JDI GOLD Website
 
-This repository contains the static DOIT GOLD homepage.
+This repository contains the static JDI GOLD homepage.
 
 ## Publish with GitHub Pages
 

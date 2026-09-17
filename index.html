@@ -3,13 +3,13 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>DOIT GOLD - Physical Gold, Digitally Transferable</title>
+    <title>JDI GOLD - Physical Gold, Digitally Transferable</title>
     <meta
       name="description"
-      content="DOIT GOLD is a gold-backed stablecoin supported by physical gold, with Standard Chartered executing gold purchases, Brink’s providing vault custody, and JD providing technology support."
+      content="JDI GOLD is a gold-backed stablecoin supported by physical gold, with Standard Chartered executing gold purchases, Brink’s providing vault custody, and JD providing technology support."
     />
-    <link rel="icon" href="./assets/doit-logo-mark.png" />
-    <link rel="preload" as="image" href="./assets/doit-gold-vault-hero-v2.jpg" />
+    <link rel="icon" href="./assets/jdi-logo.svg" />
+    <link rel="preload" as="image" href="./assets/jdi-gold-vault-hero-v3.png" />
     <script>
       document.documentElement.classList.add("reveal-ready");
     </script>
@@ -41,10 +41,6 @@
         color: var(--white);
         font-family: Inter, "PingFang SC", "Microsoft YaHei", Arial, sans-serif;
         line-height: 1.55;
-      }
-
-      body.menu-open {
-        overflow: hidden;
       }
 
       section[id] {
@@ -101,7 +97,7 @@
       }
 
       .brand {
-        width: 151px;
+        width: 52px;
       }
 
       .brand img {
@@ -123,6 +119,56 @@
         align-items: center;
         gap: 12px;
         white-space: nowrap;
+      }
+
+      .mobile-menu-toggle {
+        position: relative;
+        display: none;
+        width: 44px;
+        height: 44px;
+        align-items: center;
+        justify-content: center;
+        border: 1px solid rgba(255, 255, 255, 0.3);
+        border-radius: 4px;
+        background: transparent;
+        color: var(--yellow);
+        cursor: pointer;
+      }
+
+      .mobile-menu-toggle span {
+        position: absolute;
+        width: 19px;
+        height: 2px;
+        background: currentColor;
+        transition: transform 180ms ease, opacity 180ms ease;
+      }
+
+      .mobile-menu-toggle span:first-child {
+        transform: translateY(-6px);
+      }
+
+      .mobile-menu-toggle span:last-child {
+        transform: translateY(6px);
+      }
+
+      .nav.is-menu-open .mobile-menu-toggle span:first-child {
+        transform: rotate(45deg);
+      }
+
+      .nav.is-menu-open .mobile-menu-toggle span:nth-child(2) {
+        opacity: 0;
+      }
+
+      .nav.is-menu-open .mobile-menu-toggle span:last-child {
+        transform: rotate(-45deg);
+      }
+
+      .mobile-menu {
+        display: none;
+      }
+
+      .mobile-menu-backdrop {
+        display: none;
       }
 
       .language-switch {
@@ -289,7 +335,7 @@
         min-height: 100vh;
         min-height: 100svh;
         overflow: hidden;
-        background: var(--black) url("./assets/doit-gold-vault-hero-v2.jpg") center center / cover no-repeat;
+        background: var(--black) url("./assets/jdi-gold-vault-hero-v3.png") center center / cover no-repeat;
       }
 
       .hero::after {
@@ -937,7 +983,7 @@
       }
 
       .footer-logo {
-        width: 220px;
+        width: 64px;
       }
 
       .footer-links {
@@ -953,9 +999,10 @@
 
       .footer-bottom {
         display: flex;
-        align-items: center;
+        align-items: flex-start;
+        flex-direction: column;
         justify-content: flex-start;
-        gap: 22px;
+        gap: 6px;
         color: rgba(255, 255, 255, 0.38);
         font-size: 11px;
         white-space: nowrap;
@@ -1021,7 +1068,7 @@
         }
 
         .brand {
-          width: 127px;
+          width: 48px;
         }
 
         .nav-actions {
@@ -1098,7 +1145,7 @@
         }
 
         .footer-logo {
-          width: 180px;
+          width: 58px;
         }
 
         .footer-bottom {
@@ -1123,7 +1170,7 @@
         }
 
         .brand {
-          width: 118px;
+          width: 46px;
         }
 
         .hero,
@@ -1238,57 +1285,347 @@
         }
       }
 
+      @media (max-width: 760px) {
+        .nav {
+          top: 0;
+          right: 0;
+          left: 0;
+          z-index: 90;
+          border-bottom: 1px solid rgba(255, 255, 255, 0.14);
+          border-radius: 0;
+          background: rgba(5, 5, 5, 0.94);
+        }
+
+        .nav.is-menu-open {
+          border-radius: 0;
+        }
+
+        .nav-inner {
+          width: 100%;
+          min-height: 74px;
+          margin: 0;
+          gap: 10px;
+          padding: 0 24px;
+        }
+
+        .brand,
+        .mobile-menu-toggle {
+          position: relative;
+          z-index: 81;
+        }
+
+        .brand,
+        .nav.is-menu-open .brand {
+          width: 42px;
+          flex: 0 0 42px;
+          transform: none;
+        }
+
+        .brand img,
+        .nav.is-menu-open .brand img {
+          width: 42px;
+          height: auto;
+          transform: none;
+        }
+
+        .nav-actions {
+          display: none;
+        }
+
+        .mobile-menu-toggle {
+          display: grid;
+          width: 40px;
+          height: 40px;
+          flex: 0 0 40px;
+          place-items: center;
+          margin: 0;
+          padding: 0;
+          border: 0;
+          border-radius: 0;
+          background: transparent;
+          color: var(--white);
+        }
+
+        .mobile-menu-toggle span {
+          top: 50%;
+          left: 50%;
+          width: 24px;
+          height: 2px;
+          margin: -1px 0 0 -12px;
+          transform-origin: center;
+        }
+
+        .mobile-menu-toggle span:first-child {
+          transform: translateY(-7px);
+        }
+
+        .mobile-menu-toggle span:last-child {
+          transform: translateY(7px);
+        }
+
+        .nav.is-menu-open .mobile-menu-toggle span:first-child {
+          transform: rotate(45deg);
+        }
+
+        .nav.is-menu-open .mobile-menu-toggle span:nth-child(2) {
+          opacity: 0;
+        }
+
+        .nav.is-menu-open .mobile-menu-toggle span:last-child {
+          transform: rotate(-45deg);
+        }
+
+        .mobile-menu {
+          position: fixed;
+          top: 74px;
+          right: 0;
+          left: 0;
+          z-index: 80;
+          display: block;
+          height: auto;
+          background: rgba(5, 5, 5, 0.88);
+          border-bottom: 1px solid rgba(255, 255, 255, 0.14);
+          box-shadow: 0 22px 46px rgba(0, 0, 0, 0.34);
+          color: #fff;
+          -webkit-backdrop-filter: blur(18px);
+          backdrop-filter: blur(18px);
+          clip-path: inset(0 0 100% 0);
+          visibility: hidden;
+          transition: clip-path 0.52s cubic-bezier(0.42, 0, 0.12, 1), visibility 0s linear 0.52s;
+          pointer-events: none;
+          will-change: clip-path;
+        }
+
+        body.menu-open .mobile-menu {
+          clip-path: inset(0);
+          visibility: visible;
+          transition: clip-path 0.56s cubic-bezier(0.22, 1, 0.36, 1), visibility 0s;
+          pointer-events: auto;
+        }
+
+        .mobile-menu__header {
+          display: none;
+        }
+
+        .mobile-menu__logo {
+          display: block;
+          width: 46px;
+        }
+
+        .mobile-menu__logo img {
+          width: 100%;
+          height: auto;
+        }
+
+        .mobile-menu__close {
+          position: relative;
+          width: 40px;
+          height: 40px;
+          padding: 0;
+          border: 0;
+          background: transparent;
+          color: #fff;
+          cursor: pointer;
+        }
+
+        .mobile-menu__close::before,
+        .mobile-menu__close::after {
+          position: absolute;
+          top: 19px;
+          left: 8px;
+          width: 24px;
+          height: 2px;
+          border-radius: 2px;
+          background: currentColor;
+          content: "";
+        }
+
+        .mobile-menu__close::before {
+          transform: rotate(45deg);
+        }
+
+        .mobile-menu__close::after {
+          transform: rotate(-45deg);
+        }
+
+        .mobile-menu__links {
+          padding: 12px 24px 0;
+        }
+
+        .mobile-menu__actions {
+          position: static;
+          display: grid;
+          grid-template-columns: minmax(86px, 0.72fr) minmax(0, 1.28fr);
+          gap: 12px;
+          margin: 18px 24px 24px;
+        }
+
+        .mobile-menu__link,
+        .mobile-menu__lang {
+          display: flex;
+          width: 100%;
+          height: 60px;
+          align-items: center;
+          padding: 0;
+          border: 0;
+          background: transparent;
+          color: #fff;
+          font-size: 16px;
+          font-weight: 500;
+          line-height: 1.5;
+          text-align: left;
+          cursor: pointer;
+        }
+
+        .mobile-menu__link {
+          min-width: 86px;
+          height: 44px;
+          justify-content: center;
+          border: 1px solid var(--yellow);
+          border-radius: 4px;
+          color: #fff;
+          font-size: 13px;
+          font-weight: 760;
+          text-decoration: none;
+        }
+
+        .mobile-menu__lang {
+          justify-content: space-between;
+          border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .mobile-menu__lang.is-open {
+          color: #fff;
+          text-decoration: underline;
+          text-underline-offset: 4px;
+        }
+
+        .mobile-menu__chevron {
+          width: 9px;
+          height: 9px;
+          border-right: 2px solid currentColor;
+          border-bottom: 2px solid currentColor;
+          transform: rotate(45deg);
+          transition: transform 0.2s ease;
+        }
+
+        .mobile-menu__lang.is-open .mobile-menu__chevron {
+          transform: rotate(225deg);
+        }
+
+        .mobile-menu__language-panel {
+          height: 0;
+          overflow: hidden;
+          transition: height 0.24s ease;
+        }
+
+        .mobile-menu__language-panel.is-open {
+          height: 36px;
+        }
+
+        .mobile-menu__language-option {
+          display: flex;
+          width: 100%;
+          height: 36px;
+          align-items: center;
+          padding: 0;
+          border: 0;
+          background: transparent;
+          color: #fff;
+          font-size: 16px;
+          font-weight: 500;
+          line-height: 1.5;
+          text-align: left;
+          cursor: pointer;
+        }
+
+        .mobile-menu__cta {
+          position: static;
+          display: flex;
+          min-height: 44px;
+          align-items: center;
+          justify-content: center;
+          border: 1px solid var(--yellow);
+          border-radius: 4px;
+          background: var(--yellow);
+          color: #000;
+          font-size: 13px;
+          font-weight: 760;
+          line-height: 1.5;
+        }
+
+        .mobile-menu__home-indicator {
+          display: none;
+        }
+
+        .mobile-menu-backdrop {
+          display: none;
+        }
+
+        body.menu-open .mobile-menu-backdrop {
+          display: none;
+        }
+
+        .mobile-menu__link,
+        .mobile-menu__lang,
+        .mobile-menu__language-panel,
+        .mobile-menu__cta {
+          opacity: 0;
+          transform: translateY(-10px);
+          transition: opacity 0.26s ease, transform 0.42s cubic-bezier(0.22, 1, 0.36, 1);
+        }
+
+        body.menu-open .mobile-menu__link,
+        body.menu-open .mobile-menu__lang,
+        body.menu-open .mobile-menu__language-panel,
+        body.menu-open .mobile-menu__cta {
+          opacity: 1;
+          transform: none;
+        }
+
+        body.menu-open .mobile-menu__link {
+          transition-delay: 0.16s;
+        }
+
+        body.menu-open .mobile-menu__lang {
+          transition-delay: 0.19s;
+        }
+
+        body.menu-open .mobile-menu__language-panel {
+          transition-delay: 0.22s;
+        }
+
+        body.menu-open .mobile-menu__cta {
+          transition-delay: 0.25s;
+        }
+      }
+
       @media (max-width: 520px) {
         .shell {
           width: min(var(--max), calc(100% - 30px));
         }
 
-        .brand {
-          width: 98px;
-        }
-
         .nav-inner {
-          gap: 8px;
+          width: 100%;
         }
 
-        .nav-actions {
-          gap: 5px;
-        }
-
-        .language-trigger {
-          min-width: 34px;
-          min-height: 40px;
-          gap: 7px;
-          padding: 0 4px;
-        }
-
-        .language-label {
-          display: none;
-        }
-
-        .language-label-short {
-          display: inline;
-        }
-
-        .language-menu {
-          right: auto;
-          left: 0;
-        }
-
-        .nav-auth-button {
-          min-width: 60px;
-          min-height: 40px;
-          padding: 0 10px;
-          font-size: 12px;
+        .brand {
+          width: 42px;
         }
 
         .hero,
         .hero-inner {
-          min-height: 720px;
+          min-height: 100svh;
         }
 
         .hero {
           background-position: 65% center;
+        }
+
+        .hero-inner {
+          align-items: center;
+          padding-top: 90px;
+          padding-bottom: 0;
         }
 
         .hero::after {
@@ -1486,10 +1823,21 @@
   <body>
     <nav class="nav" aria-label="主导航">
       <div class="shell nav-inner">
-        <a class="brand" href="#top" aria-label="DOIT GOLD 首页">
-          <img src="./assets/doit-gold-logo.svg" alt="DOIT GOLD 黄金稳定币" />
+        <a class="brand" href="#top" aria-label="JDI GOLD 首页">
+          <img src="./assets/jdi-logo.svg" alt="JDI GOLD 黄金稳定币" />
         </a>
-        <div class="nav-actions" aria-label="语言与账户操作">
+        <button
+          class="mobile-menu-toggle"
+          type="button"
+          aria-label="打开菜单"
+          aria-expanded="false"
+          aria-controls="mobile-menu"
+        >
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+        </button>
+        <div class="nav-actions" id="nav-actions" aria-label="语言与账户操作">
           <div class="language-switch">
             <button
               class="language-trigger"
@@ -1508,23 +1856,40 @@
             </div>
           </div>
           <a class="nav-auth-button nav-auth-login" href="#" data-placeholder-link>登录</a>
-          <a class="nav-auth-button nav-auth-purchase" href="#" data-placeholder-link>购买 DOIT GOLD</a>
+          <a class="nav-auth-button nav-auth-purchase" href="#" data-placeholder-link>购买 JDI GOLD</a>
         </div>
       </div>
     </nav>
+
+    <div class="mobile-menu" id="mobile-menu" aria-hidden="true">
+      <nav class="mobile-menu__links" aria-label="移动端菜单">
+        <button class="mobile-menu__lang" type="button" aria-expanded="false">
+          <span class="mobile-menu__lang-text">中文（简体）</span>
+          <span class="mobile-menu__chevron" aria-hidden="true"></span>
+        </button>
+        <div class="mobile-menu__language-panel" aria-hidden="true">
+          <button class="mobile-menu__language-option" type="button" data-lang="en">English</button>
+        </div>
+      </nav>
+      <div class="mobile-menu__actions">
+        <a class="mobile-menu__link" href="#" data-placeholder-link>登录</a>
+        <a class="mobile-menu__cta" href="#" data-placeholder-link>购买 JDI GOLD</a>
+      </div>
+      <div class="mobile-menu__home-indicator" aria-hidden="true"></div>
+    </div>
 
     <main id="top">
       <section class="hero" aria-labelledby="hero-title">
         <div class="shell hero-inner">
           <div class="hero-content">
             <p class="eyebrow">黄金稳定币</p>
-            <h1 id="hero-title">DOIT GOLD</h1>
-            <p class="hero-tagline">In JDI we trust, in DOIT we spend</p>
+            <h1 id="hero-title">JDI GOLD</h1>
+            <p class="hero-tagline">实物黄金，数字化流通</p>
             <p class="hero-copy">
               以实物黄金为储备支持，让黄金权益能够被便捷持有、转移与赎回。
             </p>
             <div class="hero-actions">
-              <a class="button button-primary" href="#" data-placeholder-link>购买 DOIT GOLD</a>
+              <a class="button button-primary" href="#" data-placeholder-link>购买 JDI GOLD</a>
               <a class="button button-secondary" href="#reserve">查看黄金储备</a>
             </div>
           </div>
@@ -1536,9 +1901,9 @@
           <header class="section-head">
             <div>
               <p class="eyebrow">资产支持</p>
-              <h2 id="reserve-title">每一枚 DOIT GOLD，锚定一克实物黄金。</h2>
+              <h2 id="reserve-title">每一枚 JDI GOLD，锚定一克实物黄金。</h2>
             </div>
-            <p>DOIT GOLD 仅在对应黄金完成购买并确认托管后铸造。相关金条信息可通过储备透明度系统查询。</p>
+            <p>JDI GOLD 仅在对应黄金完成购买并确认托管后铸造。相关金条信息可通过储备透明度系统查询。</p>
           </header>
 
           <div class="reserve-feature">
@@ -1601,7 +1966,7 @@
               <p class="eyebrow">产品能力</p>
               <h2 id="advantages-title">黄金的确定性，数字化的效率</h2>
             </div>
-            <p>DOIT GOLD 将实物黄金权益转化为可持有、可查询、可转移、可赎回的数字化产品能力。</p>
+            <p>JDI GOLD 将实物黄金权益转化为可持有、可查询、可转移、可赎回的数字化产品能力。</p>
           </header>
 
           <figure class="vault-photo">
@@ -1613,7 +1978,7 @@
             <article class="advantage-item">
               <span class="advantage-number">01</span>
               <h3>实物黄金锚定</h3>
-              <p>每枚 DOIT GOLD 锚定一克实物黄金，形成清晰、统一的资产对应关系。</p>
+              <p>每枚 JDI GOLD 锚定一克实物黄金，形成清晰、统一的资产对应关系。</p>
             </article>
             <article class="advantage-item">
               <span class="advantage-number">02</span>
@@ -1641,14 +2006,14 @@
               <p class="eyebrow">机构职责</p>
           <h2 id="partners-title">三家机构，共同支撑黄金资产链路</h2>
             </div>
-            <p>从黄金交易执行与购买，到实物黄金托管与数字化技术支持，各机构按照明确职责共同支持 DOIT GOLD 运作。</p>
+            <p>从黄金交易执行与购买，到实物黄金托管与数字化技术支持，各机构按照明确职责共同支持 JDI GOLD 运作。</p>
           </header>
 
           <div class="ecosystem-core" aria-label="核心合作机构职责">
             <article class="ecosystem-role">
               <span>交易执行与黄金购买</span>
               <h3>渣打银行</h3>
-              <p>负责黄金交易执行，并购买符合 DOIT GOLD 产品要求的实物黄金。</p>
+              <p>负责黄金交易执行，并购买符合 JDI GOLD 产品要求的实物黄金。</p>
             </article>
             <article class="ecosystem-role">
               <span>黄金金库托管</span>
@@ -1710,10 +2075,10 @@
           <header class="platform-ecosystem-head">
             <div>
               <p class="eyebrow">支持平台</p>
-              <h2 id="platform-ecosystem-title">DOIT GOLD 生态</h2>
+              <h2 id="platform-ecosystem-title">JDI GOLD 生态</h2>
             </div>
             <div class="platform-ecosystem-copy">
-              <p>支持 DOIT GOLD 获取、交易与存储的平台</p>
+              <p>支持 JDI GOLD 获取、交易与存储的平台</p>
               <span>交易所 · 钱包 · 托管平台</span>
             </div>
           </header>
@@ -1741,23 +2106,23 @@
           </header>
 
           <div class="faq-list">
-            <details name="doit-gold-faq">
-              <summary>DOIT GOLD 是什么？</summary>
-              <p>DOIT GOLD 是以实物黄金为价值基础的黄金稳定币产品，目标是把黄金的资产属性与数字平台的流通、查看和信息披露能力结合起来。</p>
+            <details name="jdi-gold-faq">
+              <summary>JDI GOLD 是什么？</summary>
+              <p>JDI GOLD 是以实物黄金为价值基础的黄金稳定币产品，目标是把黄金的资产属性与数字平台的流通、查看和信息披露能力结合起来。</p>
             </details>
-            <details name="doit-gold-faq">
+            <details name="jdi-gold-faq">
               <summary>黄金由谁购买并托管？</summary>
               <p>黄金交易执行与实物黄金购买由渣打银行负责；实物黄金进入 Brink’s 专业金库托管；京东负责技术系统和数字基础设施支持。</p>
             </details>
-            <details name="doit-gold-faq">
+            <details name="jdi-gold-faq">
               <summary>用户可以查看哪些信息？</summary>
               <p>持有人可查看储备报告、金条编号、黄金重量、纯度、发行数量、报告日期与资产余额等信息。</p>
             </details>
-            <details name="doit-gold-faq">
-              <summary>DOIT GOLD 是否等同于银行存款或保本收益产品？</summary>
-              <p>不是。DOIT GOLD 不应被理解为银行存款、收益承诺或无风险产品。用户应充分了解黄金价格、数字资产、平台服务和地区监管相关风险。</p>
+            <details name="jdi-gold-faq">
+              <summary>JDI GOLD 是否等同于银行存款或保本收益产品？</summary>
+              <p>不是。JDI GOLD 不应被理解为银行存款、收益承诺或无风险产品。用户应充分了解黄金价格、数字资产、平台服务和地区监管相关风险。</p>
             </details>
-            <details name="doit-gold-faq">
+            <details name="jdi-gold-faq">
               <summary>是否支持赎回实物黄金？</summary>
               <p>持有人可按照产品规则申请赎回。最低门槛、费用、地区限制和交付方式在赎回流程中展示。</p>
             </details>
@@ -1769,9 +2134,9 @@
     <footer class="footer" id="footer">
       <div class="shell">
         <div class="footer-main">
-          <img class="footer-logo" src="./assets/doit-gold-logo.svg" alt="DOIT GOLD 黄金稳定币" />
+          <img class="footer-logo" src="./assets/jdi-logo.svg" alt="JDI GOLD 黄金稳定币" />
           <div class="footer-bottom">
-            <span>© 2026 DOIT GOLD. 保留所有权利。</span>
+            <span>© 2026 JDI GOLD. 保留所有权利。</span>
             <span>实物黄金储备 · 专业金库托管 · 数字化技术支持</span>
           </div>
           <div class="footer-links" aria-label="页脚链接">
@@ -1783,6 +2148,14 @@
     </footer>
 
     <script>
+      const nav = document.querySelector(".nav");
+      const mobileMenuToggle = document.querySelector(".mobile-menu-toggle");
+      const mobileMenuMedia = window.matchMedia("(max-width: 760px)");
+      const mobileMenu = document.querySelector(".mobile-menu");
+      const mobileMenuLanguage = document.querySelector(".mobile-menu__lang");
+      const mobileMenuLanguageText = document.querySelector(".mobile-menu__lang-text");
+      const mobileMenuLanguagePanel = document.querySelector(".mobile-menu__language-panel");
+      const mobileMenuLanguageOption = document.querySelector(".mobile-menu__language-option");
       const languageSwitch = document.querySelector(".language-switch");
       const languageTrigger = document.querySelector(".language-trigger");
       const languageLabel = document.querySelector(".language-label");
@@ -1792,7 +2165,7 @@
       const lookupInput = document.querySelector("#lookup-input");
       const faqItems = document.querySelectorAll(".faq-list details");
       const revealGroups = [
-        ".nav .brand, .nav .nav-actions",
+        ".nav .brand, .nav .mobile-menu-toggle",
         ".hero .eyebrow, .hero h1, .hero-tagline, .hero-copy, .hero-actions",
         ".reserve .section-head > *, .reserve-feature > *, .stats .stat",
         ".why-gold-photo, .why-gold-content > .eyebrow, .why-gold-content > h2, .why-gold-intro, .gold-reason, .why-gold-note",
@@ -1834,14 +2207,15 @@
       const englishTranslations = {
         "登录": "Log in",
         "黄金稳定币": "Gold-backed Stablecoin",
+        "实物黄金，数字化流通": "Physical Gold, Digitally Transferable",
         "以实物黄金为储备支持，让黄金权益能够被便捷持有、转移与赎回。":
-          "Backed by physical gold, DOIT GOLD makes gold interests easier to hold, transfer and redeem.",
-        "购买 DOIT GOLD": "Buy DOIT GOLD",
+          "Backed by physical gold, JDI GOLD makes gold interests easier to hold, transfer and redeem.",
+        "购买 JDI GOLD": "Buy JDI GOLD",
         "查看黄金储备": "View Gold Reserves",
         "资产支持": "Asset Backing",
-        "每一枚 DOIT GOLD，锚定一克实物黄金。": "Each DOIT GOLD is backed by one gram of physical gold.",
-        "DOIT GOLD 仅在对应黄金完成购买并确认托管后铸造。相关金条信息可通过储备透明度系统查询。":
-          "DOIT GOLD is minted only after the corresponding gold has been purchased and custody confirmed. Bar details can be viewed through the reserve transparency system.",
+        "每一枚 JDI GOLD，锚定一克实物黄金。": "Each JDI GOLD is backed by one gram of physical gold.",
+        "JDI GOLD 仅在对应黄金完成购买并确认托管后铸造。相关金条信息可通过储备透明度系统查询。":
+          "JDI GOLD is minted only after the corresponding gold has been purchased and custody confirmed. Bar details can be viewed through the reserve transparency system.",
         "黄金储备总量": "Total Gold Reserves",
         "12,480 克": "12,480 grams",
         "12.48 千克": "12.48 kg",
@@ -1868,13 +2242,13 @@
         "黄金价格会发生波动，以上内容不构成投资建议。": "Gold prices fluctuate. This content does not constitute investment advice.",
         "产品能力": "Product Capabilities",
         "黄金的确定性，数字化的效率": "The Certainty of Gold, the Efficiency of Digital Infrastructure",
-        "DOIT GOLD 将实物黄金权益转化为可持有、可查询、可转移、可赎回的数字化产品能力。":
-          "DOIT GOLD turns physical gold interests into digital product capabilities that can be held, verified, transferred and redeemed.",
+        "JDI GOLD 将实物黄金权益转化为可持有、可查询、可转移、可赎回的数字化产品能力。":
+          "JDI GOLD turns physical gold interests into digital product capabilities that can be held, verified, transferred and redeemed.",
         "安全托管": "Secure Custody",
         "金库独立托管": "Independent Vault Custody",
         "实物黄金锚定": "Physical Gold Backing",
-        "每枚 DOIT GOLD 锚定一克实物黄金，形成清晰、统一的资产对应关系。":
-          "Each DOIT GOLD is backed by one gram of physical gold, creating a clear and consistent asset relationship.",
+        "每枚 JDI GOLD 锚定一克实物黄金，形成清晰、统一的资产对应关系。":
+          "Each JDI GOLD is backed by one gram of physical gold, creating a clear and consistent asset relationship.",
         "储备信息记录": "Reserve Records",
         "对应金条的编号、纯度与重量等关键信息进入储备记录，支持后续核验。":
           "Key details including bar number, purity and weight are recorded to support subsequent verification.",
@@ -1886,12 +2260,12 @@
           "Holders can view the corresponding gold reserve information and request redemption under the product rules.",
         "机构职责": "Institutional Roles",
         "三家机构，共同支撑黄金资产链路": "Three Institutions Supporting One Gold Asset Chain",
-        "从黄金交易执行与购买，到实物黄金托管与数字化技术支持，各机构按照明确职责共同支持 DOIT GOLD 运作。":
-          "From trade execution and gold purchasing to physical custody and digital infrastructure, each institution supports DOIT GOLD through a clearly defined role.",
+        "从黄金交易执行与购买，到实物黄金托管与数字化技术支持，各机构按照明确职责共同支持 JDI GOLD 运作。":
+          "From trade execution and gold purchasing to physical custody and digital infrastructure, each institution supports JDI GOLD through a clearly defined role.",
         "交易执行与黄金购买": "Trade Execution and Gold Purchasing",
         "渣打银行": "Standard Chartered",
-        "负责黄金交易执行，并购买符合 DOIT GOLD 产品要求的实物黄金。":
-          "Executes gold trades and purchases physical gold that meets DOIT GOLD product requirements.",
+        "负责黄金交易执行，并购买符合 JDI GOLD 产品要求的实物黄金。":
+          "Executes gold trades and purchases physical gold that meets JDI GOLD product requirements.",
         "黄金金库托管": "Gold Vault Custody",
         "负责符合要求的实物黄金托管与金条信息管理。": "Provides custody for eligible physical gold and manages related bar information.",
         "数字化技术支持": "Digital Technology Support",
@@ -1930,29 +2304,29 @@
         "金条分配清单": "Gold Bar Allocation",
         "产品资料": "Product Documents",
         "支持平台": "Supported Platforms",
-        "DOIT GOLD 生态": "DOIT GOLD Ecosystem",
-        "支持 DOIT GOLD 获取、交易与存储的平台": "Platforms Supporting Access, Trading and Storage for DOIT GOLD",
+        "JDI GOLD 生态": "JDI GOLD Ecosystem",
+        "支持 JDI GOLD 获取、交易与存储的平台": "Platforms Supporting Access, Trading and Storage for JDI GOLD",
         "交易所 · 钱包 · 托管平台": "Exchanges · Wallets · Custody Platforms",
         "FAQ": "FAQ",
         "常见问题": "Frequently Asked Questions",
         "关于产品定位、黄金购买与托管、信息披露、风险属性及赎回机制的基础说明。":
           "Essential information about product positioning, gold purchasing and custody, disclosure, risk characteristics and redemption.",
-        "DOIT GOLD 是什么？": "What is DOIT GOLD?",
-        "DOIT GOLD 是以实物黄金为价值基础的黄金稳定币产品，目标是把黄金的资产属性与数字平台的流通、查看和信息披露能力结合起来。":
-          "DOIT GOLD is a gold-backed stablecoin product grounded in physical gold, combining the asset characteristics of gold with digital access, transfer and disclosure capabilities.",
+        "JDI GOLD 是什么？": "What is JDI GOLD?",
+        "JDI GOLD 是以实物黄金为价值基础的黄金稳定币产品，目标是把黄金的资产属性与数字平台的流通、查看和信息披露能力结合起来。":
+          "JDI GOLD is a gold-backed stablecoin product grounded in physical gold, combining the asset characteristics of gold with digital access, transfer and disclosure capabilities.",
         "黄金由谁购买并托管？": "Who purchases and holds the gold?",
         "黄金交易执行与实物黄金购买由渣打银行负责；实物黄金进入 Brink’s 专业金库托管；京东负责技术系统和数字基础设施支持。":
           "Standard Chartered executes trades and purchases the physical gold; Brink’s provides professional vault custody; JD supports the technology systems and digital infrastructure.",
         "用户可以查看哪些信息？": "What information can users view?",
         "持有人可查看储备报告、金条编号、黄金重量、纯度、发行数量、报告日期与资产余额等信息。":
           "Holders can view reserve reports, gold bar serial numbers, gold weight, purity, issuance, report dates and asset balances.",
-        "DOIT GOLD 是否等同于银行存款或保本收益产品？": "Is DOIT GOLD a bank deposit or principal-protected product?",
-        "不是。DOIT GOLD 不应被理解为银行存款、收益承诺或无风险产品。用户应充分了解黄金价格、数字资产、平台服务和地区监管相关风险。":
-          "No. DOIT GOLD should not be understood as a bank deposit, a guaranteed return or a risk-free product. Users should understand the risks associated with gold prices, digital assets, platform services and local regulation.",
+        "JDI GOLD 是否等同于银行存款或保本收益产品？": "Is JDI GOLD a bank deposit or principal-protected product?",
+        "不是。JDI GOLD 不应被理解为银行存款、收益承诺或无风险产品。用户应充分了解黄金价格、数字资产、平台服务和地区监管相关风险。":
+          "No. JDI GOLD should not be understood as a bank deposit, a guaranteed return or a risk-free product. Users should understand the risks associated with gold prices, digital assets, platform services and local regulation.",
         "是否支持赎回实物黄金？": "Can physical gold be redeemed?",
         "持有人可按照产品规则申请赎回。最低门槛、费用、地区限制和交付方式在赎回流程中展示。":
           "Holders can request redemption under the product rules. Minimum thresholds, fees, regional restrictions and delivery methods are shown during the redemption process.",
-        "© 2026 DOIT GOLD. 保留所有权利。": "© 2026 DOIT GOLD. All rights reserved.",
+        "© 2026 JDI GOLD. 保留所有权利。": "© 2026 JDI GOLD. All rights reserved.",
         "实物黄金储备 · 专业金库托管 · 数字化技术支持":
           "Physical Gold Reserves · Professional Vault Custody · Digital Technology Support",
         "法律条款": "Legal Terms",
@@ -1961,8 +2335,8 @@
       const textBindings = [];
       const localizedAttributes = [
         { selector: ".nav", attribute: "aria-label", zh: "主导航", en: "Main navigation" },
-        { selector: ".brand", attribute: "aria-label", zh: "DOIT GOLD 首页", en: "DOIT GOLD home" },
-        { selector: ".brand img", attribute: "alt", zh: "DOIT GOLD 黄金稳定币", en: "DOIT GOLD gold-backed stablecoin" },
+        { selector: ".brand", attribute: "aria-label", zh: "JDI GOLD 首页", en: "JDI GOLD home" },
+        { selector: ".brand img", attribute: "alt", zh: "JDI GOLD 黄金稳定币", en: "JDI GOLD gold-backed stablecoin" },
         { selector: ".nav-actions", attribute: "aria-label", zh: "语言与账户操作", en: "Language and account actions" },
         { selector: ".language-menu", attribute: "aria-label", zh: "选择语言", en: "Select language" },
         {
@@ -1998,7 +2372,7 @@
           zh: "Aave、Anchorage Digital、Bitfinex、Bitget、Bitkub、Bybit、CoinDCX、CoinMENA、Coins.ph 与 Crypto.com",
           en: "Aave, Anchorage Digital, Bitfinex, Bitget, Bitkub, Bybit, CoinDCX, CoinMENA, Coins.ph and Crypto.com"
         },
-        { selector: ".footer-logo", attribute: "alt", zh: "DOIT GOLD 黄金稳定币", en: "DOIT GOLD gold-backed stablecoin" },
+        { selector: ".footer-logo", attribute: "alt", zh: "JDI GOLD 黄金稳定币", en: "JDI GOLD gold-backed stablecoin" },
         { selector: ".footer-links", attribute: "aria-label", zh: "页脚链接", en: "Footer links" }
       ];
       let currentLanguage = "zh-CN";
@@ -2027,16 +2401,39 @@
         languageTrigger.setAttribute("aria-expanded", "false");
       };
 
+      const updateMobileMenuLabel = () => {
+        const open = document.body.classList.contains("menu-open");
+        const english = currentLanguage === "en";
+        mobileMenuToggle.setAttribute("aria-label", english ? (open ? "Close menu" : "Open menu") : open ? "关闭菜单" : "打开菜单");
+      };
+
+      const closeMobileLanguageMenu = () => {
+        mobileMenuLanguage.classList.remove("is-open");
+        mobileMenuLanguagePanel.classList.remove("is-open");
+        mobileMenuLanguage.setAttribute("aria-expanded", "false");
+        mobileMenuLanguagePanel.setAttribute("aria-hidden", "true");
+      };
+
+      const closeMobileMenu = () => {
+        nav.classList.remove("is-menu-open");
+        document.body.classList.remove("menu-open");
+        mobileMenu.setAttribute("aria-hidden", "true");
+        mobileMenuToggle.setAttribute("aria-expanded", "false");
+        closeLanguageMenu();
+        closeMobileLanguageMenu();
+        updateMobileMenuLabel();
+      };
+
       const setLanguage = (language) => {
         const english = language === "en";
         currentLanguage = english ? "en" : "zh-CN";
         document.documentElement.lang = english ? "en" : "zh-CN";
         document.title = english
-          ? "DOIT GOLD - Physical Gold, Digitally Transferable"
-          : "DOIT GOLD - 实物黄金，数字化流通";
+          ? "JDI GOLD - Physical Gold, Digitally Transferable"
+          : "JDI GOLD - 实物黄金，数字化流通";
         document.querySelector('meta[name="description"]').content = english
-          ? "DOIT GOLD is a gold-backed stablecoin supported by physical gold, with Standard Chartered executing gold purchases, Brink’s providing vault custody, and JD providing technology support."
-          : "DOIT GOLD 黄金稳定币，以实物黄金为储备支持，由渣打银行负责黄金交易执行，Brink's 金库托管，京东提供技术支持。";
+          ? "JDI GOLD is a gold-backed stablecoin supported by physical gold, with Standard Chartered executing gold purchases, Brink’s providing vault custody, and JD providing technology support."
+          : "JDI GOLD 黄金稳定币，以实物黄金为储备支持，由渣打银行负责黄金交易执行，Brink's 金库托管，京东提供技术支持。";
 
         textBindings.forEach(({ node, key, prefix, suffix }) => {
           node.nodeValue = `${prefix}${english ? englishTranslations[key] : key}${suffix}`;
@@ -2048,6 +2445,10 @@
 
         languageLabel.textContent = english ? "English" : "中文（简体）";
         languageLabelShort.textContent = english ? "EN" : "中";
+        mobileMenuLanguageText.textContent = english ? "English" : "简体中文";
+        mobileMenuLanguageOption.textContent = english ? "简体中文" : "English";
+        mobileMenuLanguageOption.dataset.lang = english ? "zh-CN" : "en";
+        updateMobileMenuLabel();
         lookupInput.placeholder = english ? "Enter holding address" : "输入持有地址";
         lookupInput.setAttribute("aria-label", english ? "Holding address" : "持有地址");
 
@@ -2064,10 +2465,35 @@
         languageTrigger.setAttribute("aria-expanded", String(open));
       });
 
+      mobileMenuToggle.addEventListener("click", () => {
+        if (document.body.classList.contains("menu-open")) {
+          closeMobileMenu();
+          return;
+        }
+        nav.classList.add("is-menu-open");
+        document.body.classList.add("menu-open");
+        mobileMenu.setAttribute("aria-hidden", "false");
+        mobileMenuToggle.setAttribute("aria-expanded", "true");
+        closeLanguageMenu();
+        updateMobileMenuLabel();
+      });
+
+      mobileMenuLanguage.addEventListener("click", () => {
+        const open = mobileMenuLanguage.classList.toggle("is-open");
+        mobileMenuLanguagePanel.classList.toggle("is-open", open);
+        mobileMenuLanguage.setAttribute("aria-expanded", String(open));
+        mobileMenuLanguagePanel.setAttribute("aria-hidden", String(!open));
+      });
+
+      mobileMenuLanguageOption.addEventListener("click", () => {
+        setLanguage(mobileMenuLanguageOption.dataset.lang);
+        closeMobileMenu();
+      });
+
       languageOptions.forEach((option) => {
         option.addEventListener("click", () => {
           setLanguage(option.dataset.lang);
-          closeLanguageMenu();
+          closeMobileMenu();
         });
       });
 
@@ -2076,7 +2502,11 @@
       });
 
       document.addEventListener("keydown", (event) => {
-        if (event.key === "Escape") closeLanguageMenu();
+        if (event.key === "Escape") closeMobileMenu();
+      });
+
+      mobileMenuMedia.addEventListener("change", (event) => {
+        if (!event.matches) closeMobileMenu();
       });
 
       faqItems.forEach((item) => {
@@ -2096,7 +2526,10 @@
       });
 
       document.querySelectorAll("[data-placeholder-link]").forEach((link) => {
-        link.addEventListener("click", (event) => event.preventDefault());
+        link.addEventListener("click", (event) => {
+          event.preventDefault();
+          if (mobileMenuMedia.matches && link.closest(".mobile-menu")) closeMobileMenu();
+        });
       });
     </script>
   </body>
