@@ -917,6 +917,10 @@
         height: auto;
       }
 
+      .ecosystem-logo-grid {
+        display: none;
+      }
+
       .faq {
         background: var(--black);
         padding: var(--section-space) 0 52px;
@@ -1211,11 +1215,12 @@
         }
 
         .reserve-feature {
-          gap: 28px;
+          gap: 18px;
         }
 
         .ratio-block {
-          min-height: 280px;
+          min-height: 0;
+          padding-bottom: 0;
         }
 
         .reserve-photo img {
@@ -1598,6 +1603,37 @@
         body.menu-open .mobile-menu__cta {
           transition-delay: 0.25s;
         }
+
+        .ecosystem-logo-board {
+          overflow: visible;
+        }
+
+        .ecosystem-logo-board > img {
+          display: none;
+        }
+
+        .ecosystem-logo-grid {
+          display: grid;
+          grid-template-columns: repeat(3, minmax(0, 1fr));
+          gap: 16px;
+        }
+
+        .ecosystem-logo-tile {
+          --logo-x: 0%;
+          --logo-y: 0%;
+          display: block;
+          aspect-ratio: 2326 / 1045;
+          background-image: url("./assets/tether-ecosystem-logos-white-v2.png");
+          background-position: var(--logo-x) var(--logo-y);
+          background-repeat: no-repeat;
+          background-size: 500% 200%;
+        }
+
+        .ecosystem-logo-tile:nth-child(5n + 2) { --logo-x: 25%; }
+        .ecosystem-logo-tile:nth-child(5n + 3) { --logo-x: 50%; }
+        .ecosystem-logo-tile:nth-child(5n + 4) { --logo-x: 75%; }
+        .ecosystem-logo-tile:nth-child(5n + 5) { --logo-x: 100%; }
+        .ecosystem-logo-tile:nth-child(n + 6) { --logo-y: 100%; }
       }
 
       @media (max-width: 520px) {
@@ -1741,9 +1777,8 @@
           margin-top: 42px;
         }
 
-        .ecosystem-logo-board img {
-          width: 900px;
-          max-width: none;
+        .ecosystem-logo-grid {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
         }
 
         .journey-step {
@@ -1936,12 +1971,12 @@
           <div class="why-gold-content">
             <p class="eyebrow">为什么选择黄金</p>
             <h2 id="why-gold-title">穿越周期的实物价值基础</h2>
-            <p class="why-gold-intro">黄金具备实物属性、全球认知与相对稀缺性。将黄金权益数字化，不改变其资产基础，也让持有、查询与流通方式更加灵活。</p>
+            <p class="why-gold-intro">黄金具有实物属性、广泛的国际认可度和相对稀缺性。将黄金权益数字化，不改变其资产基础，也让持有、查询与流通方式更加灵活。</p>
             <div class="gold-reasons">
               <article class="gold-reason">
                 <span>01</span>
                 <h3>全球认可的价值载体</h3>
-                <p>黄金长期被个人、机构与不同市场持有，是具有广泛认知基础的实物资产。</p>
+                <p>黄金长期被全球不同市场的个人与机构持有，是具有广泛认知基础的实物资产。</p>
               </article>
               <article class="gold-reason">
                 <span>02</span>
@@ -1966,7 +2001,7 @@
               <p class="eyebrow">产品能力</p>
               <h2 id="advantages-title">黄金的确定性，数字化的效率</h2>
             </div>
-            <p>JDI GOLD 将实物黄金权益转化为可持有、可查询、可转移、可赎回的数字化产品能力。</p>
+            <p>JDI GOLD 通过数字化基础设施，支持用户持有和转移实物黄金权益、查询相关信息，并按产品规则申请赎回。</p>
           </header>
 
           <figure class="vault-photo">
@@ -2091,6 +2126,18 @@
               height="418"
               loading="eager"
             />
+            <div class="ecosystem-logo-grid" role="img" aria-label="Aave, Anchorage Digital, Bitfinex, Bitget, Bitkub, Bybit, CoinDCX, CoinMENA, Coins.ph and Crypto.com">
+              <span class="ecosystem-logo-tile" aria-hidden="true"></span>
+              <span class="ecosystem-logo-tile" aria-hidden="true"></span>
+              <span class="ecosystem-logo-tile" aria-hidden="true"></span>
+              <span class="ecosystem-logo-tile" aria-hidden="true"></span>
+              <span class="ecosystem-logo-tile" aria-hidden="true"></span>
+              <span class="ecosystem-logo-tile" aria-hidden="true"></span>
+              <span class="ecosystem-logo-tile" aria-hidden="true"></span>
+              <span class="ecosystem-logo-tile" aria-hidden="true"></span>
+              <span class="ecosystem-logo-tile" aria-hidden="true"></span>
+              <span class="ecosystem-logo-tile" aria-hidden="true"></span>
+            </div>
           </div>
         </div>
       </section>
@@ -2120,7 +2167,7 @@
             </details>
             <details name="jdi-gold-faq">
               <summary>JDI GOLD 是否等同于银行存款或保本收益产品？</summary>
-              <p>不是。JDI GOLD 不应被理解为银行存款、收益承诺或无风险产品。用户应充分了解黄金价格、数字资产、平台服务和地区监管相关风险。</p>
+              <p>不是。JDI GOLD 不应被视为银行存款，不承诺收益，也不是无风险产品。用户应充分了解黄金价格、数字资产、平台服务和地区监管相关风险。</p>
             </details>
             <details name="jdi-gold-faq">
               <summary>是否支持赎回实物黄金？</summary>
@@ -2208,7 +2255,7 @@
         "登录": "Log in",
         "黄金稳定币": "Gold-backed Stablecoin",
         "以实物黄金为储备支持，让黄金权益能够被便捷持有、转移与赎回。":
-          "Backed by physical gold, JDI GOLD makes gold interests easier to hold, transfer and redeem.",
+          "Backed by physical gold, JDI GOLD makes interests in gold easier to hold, transfer and redeem.",
         "购买 JDI GOLD": "Buy JDI GOLD",
         "查看黄金储备": "View Gold Reserves",
         "资产支持": "Asset Backing",
@@ -2227,11 +2274,11 @@
         "从天然资源到标准化资产": "From Natural Resource to Standardized Asset",
         "为什么选择黄金": "Why Gold",
         "穿越周期的实物价值基础": "A Physical Store of Value Across Market Cycles",
-        "黄金具备实物属性、全球认知与相对稀缺性。将黄金权益数字化，不改变其资产基础，也让持有、查询与流通方式更加灵活。":
-          "Gold combines tangible value, global recognition and relative scarcity. Digitizing gold interests preserves the underlying asset while making ownership, verification and transfer more flexible.",
+        "黄金具有实物属性、广泛的国际认可度和相对稀缺性。将黄金权益数字化，不改变其资产基础，也让持有、查询与流通方式更加灵活。":
+          "Gold is a physical asset with global recognition and relative scarcity. Digitizing interests in gold preserves the underlying asset while making it easier to hold and transfer those interests and view related information.",
         "全球认可的价值载体": "A Globally Recognized Store of Value",
-        "黄金长期被个人、机构与不同市场持有，是具有广泛认知基础的实物资产。":
-          "Gold has long been held by individuals, institutions and markets worldwide, giving it a broad base of recognition as a physical asset.",
+        "黄金长期被全球不同市场的个人与机构持有，是具有广泛认知基础的实物资产。":
+          "Gold has long been held by individuals and institutions across markets worldwide, giving it broad recognition as a physical asset.",
         "稀缺且可验证": "Scarce and Verifiable",
         "黄金供应相对有限，并可通过重量、纯度与金条编号等信息进行记录和验证。":
           "Gold supply is relatively limited, while weight, purity and bar serial numbers provide a clear basis for recording and verification.",
@@ -2241,8 +2288,8 @@
         "黄金价格会发生波动，以上内容不构成投资建议。": "Gold prices fluctuate. This content does not constitute investment advice.",
         "产品能力": "Product Capabilities",
         "黄金的确定性，数字化的效率": "The Certainty of Gold, the Efficiency of Digital Infrastructure",
-        "JDI GOLD 将实物黄金权益转化为可持有、可查询、可转移、可赎回的数字化产品能力。":
-          "JDI GOLD turns physical gold interests into digital product capabilities that can be held, verified, transferred and redeemed.",
+        "JDI GOLD 通过数字化基础设施，支持用户持有和转移实物黄金权益、查询相关信息，并按产品规则申请赎回。":
+          "JDI GOLD uses digital infrastructure to support holding and transferring interests in physical gold, viewing related information and requesting redemption under the product rules.",
         "安全托管": "Secure Custody",
         "金库独立托管": "Independent Vault Custody",
         "实物黄金锚定": "Physical Gold Backing",
@@ -2253,7 +2300,7 @@
           "Key details including bar number, purity and weight are recorded to support subsequent verification.",
         "便捷持有转移": "Efficient Holding and Transfer",
         "通过数字化基础设施完成持有、查询与转移，提高黄金权益的使用效率。":
-          "Digital infrastructure supports holding, verification and transfer, improving the usability of gold interests.",
+          "Digital infrastructure makes it easier to hold and transfer interests in gold and to view related information.",
         "储备透明可查": "Transparent, Verifiable Reserves",
         "持有人可查询对应的黄金储备信息，并按照产品规则申请赎回。":
           "Holders can view the corresponding gold reserve information and request redemption under the product rules.",
@@ -2300,7 +2347,7 @@
         "Brink’s 金库": "Brink’s Vault",
         "技术支持": "Technology Support",
         "储备报告": "Reserve Report",
-        "金条分配清单": "Gold Bar Allocation",
+        "金条分配清单": "Gold Bar Allocation List",
         "产品资料": "Product Documents",
         "支持平台": "Supported Platforms",
         "JDI GOLD 生态": "JDI GOLD Ecosystem",
@@ -2318,10 +2365,10 @@
           "Standard Chartered executes trades and purchases the physical gold; Brink’s provides professional vault custody; JD supports the technology systems and digital infrastructure.",
         "用户可以查看哪些信息？": "What information can users view?",
         "持有人可查看储备报告、金条编号、黄金重量、纯度、发行数量、报告日期与资产余额等信息。":
-          "Holders can view reserve reports, gold bar serial numbers, gold weight, purity, issuance, report dates and asset balances.",
+          "Holders can view reserve reports, gold bar serial numbers, gold weight, purity, the number of tokens issued, report dates and asset balances.",
         "JDI GOLD 是否等同于银行存款或保本收益产品？": "Is JDI GOLD a bank deposit or principal-protected product?",
-        "不是。JDI GOLD 不应被理解为银行存款、收益承诺或无风险产品。用户应充分了解黄金价格、数字资产、平台服务和地区监管相关风险。":
-          "No. JDI GOLD should not be understood as a bank deposit, a guaranteed return or a risk-free product. Users should understand the risks associated with gold prices, digital assets, platform services and local regulation.",
+        "不是。JDI GOLD 不应被视为银行存款，不承诺收益，也不是无风险产品。用户应充分了解黄金价格、数字资产、平台服务和地区监管相关风险。":
+          "No. JDI GOLD should not be treated as a bank deposit. It does not promise returns and is not risk-free. Users should understand the risks associated with gold prices, digital assets, platform services and local regulation.",
         "是否支持赎回实物黄金？": "Can physical gold be redeemed?",
         "持有人可按照产品规则申请赎回。最低门槛、费用、地区限制和交付方式在赎回流程中展示。":
           "Holders can request redemption under the product rules. Minimum thresholds, fees, regional restrictions and delivery methods are shown during the redemption process.",
@@ -2337,6 +2384,7 @@
         { selector: ".brand", attribute: "aria-label", zh: "JDI GOLD 首页", en: "JDI GOLD home" },
         { selector: ".brand img", attribute: "alt", zh: "JDI GOLD 黄金稳定币", en: "JDI GOLD gold-backed stablecoin" },
         { selector: ".nav-actions", attribute: "aria-label", zh: "语言与账户操作", en: "Language and account actions" },
+        { selector: ".mobile-menu__links", attribute: "aria-label", zh: "移动端菜单", en: "Mobile menu" },
         { selector: ".language-menu", attribute: "aria-label", zh: "选择语言", en: "Select language" },
         {
           selector: ".reserve-photo img",
@@ -2430,7 +2478,7 @@
         document.title = "JDI GOLD - In Gold We Trust. In JDI We Spend.";
         document.querySelector('meta[name="description"]').content = english
           ? "JDI GOLD is a gold-backed stablecoin supported by physical gold, with Standard Chartered executing gold purchases, Brink’s providing vault custody, and JD providing technology support."
-          : "JDI GOLD 黄金稳定币，以实物黄金为储备支持，由渣打银行负责黄金交易执行，Brink's 金库托管，京东提供技术支持。";
+          : "JDI GOLD 黄金稳定币，以实物黄金为储备支持，由渣打银行负责黄金交易执行，Brink’s 金库托管，京东提供技术支持。";
 
         textBindings.forEach(({ node, key, prefix, suffix }) => {
           node.nodeValue = `${prefix}${english ? englishTranslations[key] : key}${suffix}`;
